@@ -1,3 +1,3 @@
 # pragprog-exercises
 
-This is a collection of small scripts i have written as i work through the book 'Exercises for Programmers' by Brian P.Hogan.
+A collection of small scripts i am writing as i work through exercises in the book 'Exercises for Programmers' by Brian P.Hogan.
