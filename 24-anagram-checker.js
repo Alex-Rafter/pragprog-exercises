@@ -12,17 +12,12 @@ inquirer
     }
   ]) /* Answers */
   .then((answers) => {
-    // Answers to uppercase
-    const stringOne = answers.wordOne.toUpperCase()
-    const stringTwo = answers.wordTwo.toUpperCase()
-
-    // Strings split into arrays of single characters
-    const [x, y] = stringsToArrays(stringOne, stringTwo)
-    // These arrays then ordered alphabetically
-    const [ar1, ar2] = orderArrays(x, y)
+    // Answers to uppercase, split into arrays of single characters, and order alphabetically
+    const wordOneNowArray = answers.wordOne.toUpperCase().split('').sort()
+    const wordTwoNowArray = answers.wordTwo.toUpperCase().split('').sort()
 
     // Check all array items match, returning boolean
-    const outcome = checkArraysMatch(ar1, ar2)
+    const outcome = checkArraysMatch(wordOneNowArray, wordTwoNowArray)
 
     // Output statements
     if (outcome === true) {
@@ -36,30 +31,12 @@ inquirer
     }
   })
 
-const stringsToArrays = (stringOne, stringTwo) => {
-  const arrayOne = stringOne.split('')
-  const arrayTwo = stringTwo.split('')
-  return [arrayOne, arrayTwo]
-}
-
-const orderArrays = (firstWord, secondWord) => {
-  firstWord.sort()
-  secondWord.sort()
-  return [firstWord, secondWord]
-}
-
 const checkArraysMatch = (arr1, arr2) => {
   if (arr1.length !== arr2.length) {
     return false
   }
 
-  arr1.forEach((item1) =>
-    arr2.forEach((item2) => {
-      if (item1 !== item2) {
-        return false
-      }
-    })
-  )
+  return arr1.every((char, i) => char === arr2[i])
 
   return true
 }

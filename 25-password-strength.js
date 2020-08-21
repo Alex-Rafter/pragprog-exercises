@@ -23,21 +23,29 @@ const runCheck = (password) => {
     specialChar: /[!@#$%^&*)(+=._-]/g
   }
 
+  // Function for use with character collections, returning score of 1 if null and 0 if not null
+  const nullOrNotScore = (x) => (password.match(x) != null ? 0 : 1)
+
   // Truthy / falsy expressions from regex and user input matching
   const inputObj = {
-    number: password.match(regObj.number),
-    lowerChar: password.match(regObj.lowerChar),
-    uppperChar: password.match(regObj.uppperChar),
-    specialChar: password.match(regObj.specialChar),
+    number: nullOrNotScore(regObj.number),
+    lowerChar: nullOrNotScore(regObj.lowerChar),
+    uppperChar: nullOrNotScore(regObj.uppperChar),
+    specialChar: nullOrNotScore(regObj.specialChar),
     totalChars: password.length
   }
 
-  // Score set to 4 and then redcued by 1 for every null value
-  let score = 4
-
-  Object.values(inputObj).forEach((item) => {
-    if (!item) score--
+  // Create array of InputObj values
+  const charArr = Object.values(inputObj)
+  // Remove password length value, and add base score of 4 to array
+  charArr.splice(-1, 1, 4)
+  // Reduce array to single value, subracting each value from the base score of 4
+  charArr.sort(function (a, b) {
+    return b - a
   })
+  const score = charArr.reduce(
+    (accumulator, currentValue) => accumulator - currentValue
+  )
 
   // Score used to determine message to output
   let msg
