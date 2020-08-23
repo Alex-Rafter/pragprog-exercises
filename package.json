@@ -1,0 +1,31 @@
+{
+  "name": "pragprog-exercises",
+  "version": "1.0.0",
+  "description": "exercises",
+  "main": "24-anagram-checker.js",
+  "scripts": {
+    "test": "npx standard *.js",
+    "prettier": "npx prettier --write .",
+    "ex-24": "node 24-anagram-checker.js",
+    "ex-25": "node 25-password-strength.js",
+    "ex-26": "node 27-validate-input.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alex-Rafter/pragprog-exercises.git"
+  },
+  "author": "Alex Rafter",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Alex-Rafter/pragprog-exercises/issues"
+  },
+  "homepage": "https://github.com/Alex-Rafter/pragprog-exercises#readme",
+  "dependencies": {
+    "inquirer": "^7.3.3"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^6.11.0",
+    "prettier": "2.0.5",
+    "standard": "^14.3.4"
+  }
+}

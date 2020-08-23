@@ -37,6 +37,4 @@ const checkArraysMatch = (arr1, arr2) => {
   }
 
   return arr1.every((char, i) => char === arr2[i])
-
-  return true
 }
