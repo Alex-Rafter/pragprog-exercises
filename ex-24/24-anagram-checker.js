@@ -1,4 +1,6 @@
-const inquirer = require('inquirer')
+import inquirerImport from 'inquirer'
+const inquirer = inquirerImport
+
 inquirer
   /* Questions */
   .prompt([

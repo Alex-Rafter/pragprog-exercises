@@ -2,12 +2,17 @@
   "name": "pragprog-exercises",
   "version": "1.0.0",
   "description": "exercises",
-  "main": "24-anagram-checker.js",
+  "main": "./ex-24/24-anagram-checker.js",
+  "type": "module",
   "scripts": {
-    "test": "npx standard *.js",
-    "ex-24": "node 24-anagram-checker.js",
-    "ex-25": "node 25-password-strength.js",
-    "ex-26": "node 27-validate-input.js"
+    "lint": "standard **/*.js",
+    "ex-14": "node ./ex-14/tax-calculator.js",
+    "ex-21": "node ./ex-21/numbers-to-names.js",
+    "ex-22": "node ./ex-22/comparing-numbers.js",
+    "ex-24": "node ./ex-24/24-anagram-checker.js",
+    "ex-25": "node ./ex-25/25-password-strength.js",
+    "ex-27": "node ./ex-27/27-validate-inputs.js",
+    "ex-32": "node ./ex-32/ui.js"
   },
   "repository": {
     "type": "git",
